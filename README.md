@@ -22,8 +22,10 @@
 # 安裝步驟
 
 1. 安裝 node.js 與 npm
-2. 下載本專案
+2. 下載本專案至本地：git clone https://github.com/tujumg/Reataurant_list
 3. 透過終端機進入資料夾，輸入：npm install
-4. 完成 npm 安裝後，繼續輸入：npm run dev
-5. 若看見 Express is listening on http://localhost:3000 訊息則代表順利運行，打開瀏覽器進入到以下網址 http://localhost:3000
-6. 若欲暫停使用 ctrl + c
+4. 修改使用者名稱以及密碼等參數,輸入：export MONGODB_URI=“mongodb+srv://使用者名稱：使用者密碼@alpha.0q4uo.mongodb.net/MyRestaurant?retryWrites=true&w=majority”
+5. 匯入 Seeder 檔案
+6. 繼續輸入：npm run dev
+7. 若看見 Express is listening on http://localhost:3000 訊息則代表順利運行，打開瀏覽器進入到以下網址 http://localhost:3000
+8. 若欲暫停使用 ctrl + c
