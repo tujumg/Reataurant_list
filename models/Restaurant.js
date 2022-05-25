@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const todoSchema = new Schema({
+const restaurantSchema = new Schema({
     name: { type: String, required: true },
     name_en: { type: String, required: true },
     category: { type: String, required: true },
@@ -11,4 +11,4 @@ const todoSchema = new Schema({
     rating: { type: Number, required: true },
     description: { type: String, required: true },
 })
-module.exports = mongoose.model('Restaurant', todoSchema)
+module.exports = mongoose.model('Restaurant', restaurantSchema)
