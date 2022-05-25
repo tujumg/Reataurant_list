@@ -7,6 +7,7 @@ router.get('/new',(req,res)=>{
     res.render('new')
 })
 router.post('/',(req,res)=>{
+    console.log(req.body)
     Restaurant.create(req.body)
         .then(()=>res.redirect('/'))
         .catch(err => console.log(err))

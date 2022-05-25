@@ -11,20 +11,38 @@ router.get('/',(req,res)=>{
         .catch(error=>console.error(error)) // 錯誤處理
 })
 
-// 搜尋餐廳
-router.get('/search',(req,res)=>{
-    
-    const keyword = req.query.keyword.trim().toLowerCase()
+//排序
+router.get('/sort', (req, res) => {
+    const sort = req.query.sort
+    const sortRule = {
+        name_asc: { name: 'asc' },
+        name_desc: { name: 'desc' },
+        rating_asc: { rating: 'asc' },
+        rating_desc: { rating: 'desc' }
+    }
+    console.log('sortRule:', sortRule[sort])
+    console.log('sort:', sort)
     Restaurant.find()
         .lean()
+        .sort(sortRule[sort])
         .then(restaurantData => {
-            const filterRestaurantsData = restaurantData.filter(
-                data =>
-                    data.name.toLowerCase().includes(keyword) ||
-                    data.category.includes(keyword)
-            )
-            res.render('index', { restaurantData: filterRestaurantsData, keyword })
+            res.render('index', {restaurantData})
         })
+        .catch(error => console.log(error))
+})
+
+// 搜尋餐廳
+router.get('/search',(req,res)=>{
+    const keyword = req.query.keyword.trim() 
+    Restaurant.find({
+        $or: [
+            { name: { $regex: keyword, $options: 'i' } },
+            { name_en: { $regex: keyword, $options: 'i' } },
+            { category: { $regex: keyword, $options: 'i' } }
+        ]
+    })
+        .lean()
+        .then(restaurantData => {res.render('index', {restaurantData,keyword})})
         .catch(err => console.log(err))
 })
 module.exports = router
