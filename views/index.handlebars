@@ -1,6 +1,7 @@
 <div class="container search-bar">
-  <div class="search-bar-outer">
-    <div class="row search-bar-inner justify-content-around">
+  <div class="search-bar-outer row col">
+    <div class="col d-flex bd-highlight search-bar-inner justify-content-around">
+     <div class="p-2 flex-fill bd-highlight"> 
       <form action="/search">
           <h4 class="mb-2 search-bar-title">尋找餐廳：</h4>        
           <div class="input-group">
@@ -19,6 +20,8 @@
             </div>
           </div>
       </form>
+     </div>
+     <div class="p-2 flex-fill bd-highlight">
       <form action="./sort">
           <h4 class="mb-2" for="sort">排序餐廳</h4>
           <select id="sort" name="sort" onchange="form.submit()">
@@ -29,6 +32,7 @@
             <option value="rating_desc">地區(5->1)</option>
           </select>
       </form>
+     </div> 
     </div>
   </div>
 </div>
