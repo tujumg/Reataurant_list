@@ -6,6 +6,9 @@ const restaurantList = require('../../restaurant.json').results
 db.once('open', () => {
     console.log('mongodb connected!')
     Restaurant.create(restaurantList)
-            
-    console.log('done!')
+        .then(() => {
+            console.log('MongoDB restaurantSeeder created!')
+        })
+        .catch(error => console.log(error))
+        .finally(() => db.close())
 })
