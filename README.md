@@ -1,12 +1,13 @@
-<img width="1215" alt="restaurant" src="https://github.com/tujumg/shortenURL/blob/master/%E6%88%AA%E5%9C%96/%E6%88%AA%E5%9C%96%202022-05-27%20%E4%B8%8B%E5%8D%884.54.48.png">
-<img width="1215" alt="restaurant" src="hhttps://github.com/tujumg/shortenURL/blob/master/%E6%88%AA%E5%9C%96/%E6%88%AA%E5%9C%96%202022-05-27%20%E4%B8%8B%E5%8D%884.53.47.png">
+<img width="1215" alt="restaurant" src="https://github.com/tujumg/Reataurant_list/blob/main/%E6%88%AA%E5%9C%96%202022-05-26%20%E4%B8%8B%E5%8D%881.24.58.png">
 
-# 關於 shortenURL
+# 關於 RestaurantList
 
-1. 使用者可以將網址縮短
-2. 使用者可以直接複製新產生的短網址
-3. 使用者可以透過新產生的短網址連到原本的網址目的地
-4. 相同的網址只會產生同一組短網址
+1. 查看所有的餐廳
+2. 查看餐廳詳細資訊
+3. 以餐廳名稱或店家類型來搜尋特定餐廳
+4. 新增餐廳資訊
+5. 更改餐廳資訊
+6. 刪除餐廳資訊
 
 # 環境建置與需求
 
@@ -21,9 +22,10 @@
 # 安裝步驟
 
 1. 安裝 node.js 與 npm
-2. 下載本專案至本地：git clone https://github.com/tujumg/shortenURL
+2. 下載本專案至本地：git clone https://github.com/tujumg/Reataurant_list
 3. 透過終端機進入資料夾，輸入：npm install
-4. 修改使用者名稱以及密碼等參數,輸入：export MONGODB_URI=“mongodb+srv://使用者名稱：使用者密碼@alpha.0q4uo.mongodb.net/URL?retryWrites=true&w=majority”
-5. 繼續輸入：npm run dev
-6. 若看見 Express is listening on http://localhost:3000 訊息則代表順利運行，打開瀏覽器進入到以下網址 http://localhost:3000
-7. 若欲暫停使用 ctrl + c
+4. 修改使用者名稱以及密碼等參數,輸入：export MONGODB_URI=“mongodb+srv://使用者名稱：使用者密碼@alpha.0q4uo.mongodb.net/MyRestaurant?retryWrites=true&w=majority”
+5. 匯入 Seeder 檔案
+6. 繼續輸入：npm run dev
+7. 若看見 Express is listening on http://localhost:3000 訊息則代表順利運行，打開瀏覽器進入到以下網址 http://localhost:3000
+8. 若欲暫停使用 ctrl + c
