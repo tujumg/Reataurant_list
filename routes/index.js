@@ -5,7 +5,7 @@ const restaurant = require('./modules/restaurant')  // 引入 restaurant 模組�
 const users = require('./modules/users')
 const { authenticator } = require('../middleware/auth')  // 掛載 middleware
 
-router.use('/restaurant', authenticator, restaurant) // 加入驗證程序
+router.use('/restaurants', authenticator, restaurant) // 加入驗證程序
 router.use('/users',users)
 
 router.use('/', authenticator, home) // 加入驗證程序
