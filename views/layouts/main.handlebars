@@ -18,7 +18,7 @@
     <div class="container">
       <a class="navbar-brand" href="/">
           <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30" height="30" class="d-inline-block align-top" alt="我的餐廳清單">
-          我的餐廳清單
+          {{#if isAuthenticated}}{{ user.name}}'s {{/if}}的餐廳清單
       </a>
     </div>
     <div class="text-right">
@@ -26,6 +26,10 @@
     </div>
   </nav>
   <div class="banner"></div>
+  <div>
+  <a href="/users/logout" class="btn btn-outline-light">Logout</a>
+  <a href="/users/login" class="btn btn-outline-light">Login</a>
+</div>
 </header>
  {{{body}}}
     <script src="/javascripts/popper.js"></script>
