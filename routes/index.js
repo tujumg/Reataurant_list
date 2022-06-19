@@ -3,9 +3,11 @@ const router = express.Router() // 準備引入路由模組
 const home = require('./modules/home') // 引入 home 模組程式碼
 const restaurant = require('./modules/restaurant')  // 引入 restaurant 模組程式碼
 const users = require('./modules/users')
- 
-router.use('/', home)  // 將網址結構符合 / 字串的 request 導向 home 模組 
-router.use('/restaurants', restaurant)  // 將網址結構符合 /restaurants 字串開頭的 request 導向 restaurant 模組
+const { authenticator } = require('../middleware/auth')  // 掛載 middleware
+
+router.use('/restaurant', authenticator, restaurant) // 加入驗證程序
 router.use('/users',users)
+
+router.use('/', authenticator, home) // 加入驗證程序
 
 module.exports = router // 匯出路由器
