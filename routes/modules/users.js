@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const passport = require('passport')
+const bcrypt = require('bcryptjs')
 const LocalStrategy = require('passport-local').Strategy
 const User = require('../../models/user')
 
@@ -44,15 +45,24 @@ router.post('/register',(req,res) =>{
                     password,
                     confirmPassword
                 })
-            } else {
-                return User.create({
-                    name,
-                    email,
-                    password
+            } 
+            return bcrypt
+                .genSalt(10)
+                .then(salt => {
+                    console.log('salt:',salt)
+                    return bcrypt.hash(password, salt)
                 })
-                    .then(() => res.redirect('/'))
-                    .catch(err => console.log(err))
-            }
+                .then(hash => {
+                    console.log('hash:',hash)
+                    return User.create({
+                        name,
+                        email,
+                        password : hash
+                    })
+                })
+                .then(() => res.redirect('/'))
+                .catch(err => console.log(err))
+            
         })
         .catch(err => console.log(err))
 })
