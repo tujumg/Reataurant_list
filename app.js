@@ -7,6 +7,7 @@ const session = require('express-session')
 const routes = require('./routes') // 引用路由器
 const app = express()
 const usePassport = require('./config/passport')
+const flash = require('connect-flash')
 
 const port = process.env.PORT || 3000
 
@@ -24,10 +25,13 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 
 usePassport(app)
+app.use(flash())
 app.use((req, res, next) => {
     console.log(req.user)  // 你可以在這裡 console.log(req.user) 等資訊來觀察
     res.locals.isAuthenticated = req.isAuthenticated()
     res.locals.user = req.user
+    res.locals.success_msg = req.flash('success_msg')
+    res.locals.warning_msg = req.flash('warning_msg')
     next()
 })
 
