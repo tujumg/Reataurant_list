@@ -8,15 +8,18 @@ const routes = require('./routes') // 引用路由器
 const app = express()
 const usePassport = require('./config/passport')
 const flash = require('connect-flash')
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config()
+}
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT 
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
 app.use(session({
-    secret:'ThisIsMySecret',
-    resave:false ,
+    secret : process.env.SESSION_SECRET,
+    resave : false ,
     saveUninitialized:true
 }))
 app.use(express.static('public'))
