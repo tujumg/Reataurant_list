@@ -1,4 +1,4 @@
-<img width="1215" alt="restaurant" src="https://github.com/tujumg/Reataurant_list/blob/main/%E6%88%AA%E5%9C%96%202022-05-26%20%E4%B8%8B%E5%8D%881.24.58.png">
+<img width="1215" alt="restaurant" src="https://github.com/tujumg/Reataurant_list/blob/main/%E6%88%AA%E5%9C%96%202022-06-23%20%E4%B8%8B%E5%8D%889.49.30.png">
 
 # 關於 RestaurantList
 
@@ -11,21 +11,46 @@
 
 # 環境建置與需求
 
-1. Node.js 16.14.0
-2. Express: 4.16.4
-3. Express-handlebars: 3.0.0
-4. Bootstrap 5.1.3
-5. Font-awesome: 4.7.0
-6. mongoose:6.0.5
-7. MongoDB
+Node.js 14.16.0
+
+Express 4.16.4
+
+Express-Handlebars 3.0.0
+
+Bootstrap 4.3.1
+
+Font-awesome 5.8.1
+
+MongoDB
+
+mongoose 6.3.3
+
+bcryptjs 2.4.3
+
+body-parser 1.20.0
+
+connect-flash 0.1.1
+
+dotenv 8.2.0
+
+express-session 1.17.1
+
+method-override 3.0.0
+
+passport 0.4.1
+
+passport-facebook 3.0.0
+
+passport-local 1.0.0
 
 # 安裝步驟
 
 1. 安裝 node.js 與 npm
 2. 下載本專案至本地：git clone https://github.com/tujumg/Reataurant_list
-3. 透過終端機進入資料夾，輸入：npm install
-4. 修改使用者名稱以及密碼等參數,輸入：export MONGODB_URI=“mongodb+srv://使用者名稱：使用者密碼@alpha.0q4uo.mongodb.net/MyRestaurant?retryWrites=true&w=majority”
-5. 匯入 Seeder 檔案
-6. 繼續輸入：npm run dev
-7. 若看見 Express is listening on http://localhost:3000 訊息則代表順利運行，打開瀏覽器進入到以下網址 http://localhost:3000
-8. 若欲暫停使用 ctrl + c
+3. 透過終端機進入資料夾，輸入：npm install 4.下載完成後新增一個.env，放入 MONGODB_URI，
+   連結你的 mongoDB
+   MONGODB_URI="<根據自己的 MONGODB_URI 及帳號密碼做設定>"
+4. 匯入 Seeder 檔案
+5. 繼續輸入：npm run dev
+6. 若看見 Express is listening on http://localhost:3000 訊息則代表順利運行，打開瀏覽器進入到以下網址 http://localhost:3000
+7. 若欲暫停使用 ctrl + c
